@@ -1,0 +1,25 @@
+<%- include("partials/header"); -%>
+
+<div class="home-flex">
+  <div class="flexbox-item fl-item1">
+    <h1>Home</h1>
+    <p><%= startingContent %></p>
+  </div>
+  <div class="flexbox-item fl-item2">
+    <img src="https://github.com/CODEX108/Portfolio/blob/main/Blogg.png?raw=true" alt="Bloggit"/>
+  </div>
+</div>
+
+<div class="blog-flex">
+  <div class="fl-it i1">
+    <% posts.forEach(function(post){ %>
+
+    <h1 ><%=post.title%></h1>
+    <p>
+      <%=post.content.substring(0, 100) + " ..."%>
+      <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+
+    <% }) %>
+  </div>
+</div>
